@@ -1,0 +1,18 @@
+<div class="card" (click)="selectRecipe()" *ngIf="recipe">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">{{ recipe.getName() }}</h4>
+        <p class="card-text">{{ recipe.getDescription() }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img
+        class="rounded-end img-fluid"
+        [src]="recipe.getImagePath()"
+        alt="{{ recipe.getName() }}"
+        style="max-height: 150px"
+      />
+    </div>
+  </div>
+</div>

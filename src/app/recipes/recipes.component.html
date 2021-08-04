@@ -1,0 +1,11 @@
+<div class="row my-auto">
+    <div class="col-md-5">
+        <app-recipe-list></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail *ngIf="recipe; else infoText" [recipe]="recipe"></app-recipe-detail>
+        <ng-template #infoText>
+          <h3 class="text-center align-middle">Please select a Recipe</h3>
+        </ng-template>
+    </div>
+</div>
