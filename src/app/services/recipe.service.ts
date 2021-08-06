@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Recipe } from '../recipes/recipe.model';
+import { Recipe } from '../shared/recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -8,11 +8,12 @@ import { ShoppingListService } from './shopping-list.service';
 })
 export class RecipeService {
 
-  @Output() public selectEv = new EventEmitter<Recipe>();
+  // @Output() public selectEv = new EventEmitter<Recipe>();
   private recipes: Recipe[];
   constructor(private slService: ShoppingListService) {
     this.recipes = [
       new Recipe(
+        0,
         "Tasty Schnitzel",
         "This is a super-tasty Schnitzel - just awesome!",
         "https://upload.wikimedia.org/wikipedia/commons/b/bc/Wiener_Schnitzel_2012.jpg",
@@ -22,6 +23,7 @@ export class RecipeService {
         ]
       ),
       new Recipe(
+        1,
         "Big Fat Burger",
         "What else you need to say?",
         "https://i1.wp.com/www.thegiornale.it/wp-content/uploads/2019/04/hamburger-torino.jpg?resize=704%2C396&ssl=1",
@@ -35,6 +37,9 @@ export class RecipeService {
 
   public getRecipes() {
     return this.recipes.slice();
+
+  }public getRecipe(id: number) {
+    return this.recipes.find((recipe: Recipe) => recipe.getId() === id);
   }
 
   public ingsToShoppingList(ings: Ingredient[]) {

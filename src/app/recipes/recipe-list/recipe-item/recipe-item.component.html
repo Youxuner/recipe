@@ -1,4 +1,4 @@
-<div class="card" (click)="selectRecipe()" *ngIf="recipe">
+<div class="card" [routerLink]="[recipe.getId()]" routerLinkActive="border-primary text-primary">
   <div class="row">
     <div class="col-md-8">
       <div class="card-body">

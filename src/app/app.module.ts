@@ -14,6 +14,13 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { NgxPopper } from 'angular-popper';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -26,7 +33,11 @@ import { DropdownDirective } from './shared/dropdown.directive';
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    PageNotFoundComponent,
+    ErrorPageComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +45,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
