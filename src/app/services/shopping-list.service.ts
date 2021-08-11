@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable({
@@ -7,7 +8,8 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListService {
 
   private ingredients: Ingredient[] = [];
-  @Output() public updatedEv = new EventEmitter();
+  public updatedSub = new Subject();
+  public editSub = new Subject<number>();
   constructor() {
     this.ingredients = [
       new Ingredient("Apples", 5),
@@ -20,7 +22,11 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  private _addIngredient(ing: Ingredient){
+  public getIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
+  private _addIngredient(ing: Ingredient) {
     let index = this.ingredients.findIndex(ingredient => ingredient.name == ing.name);
     if (index == -1)
       this.ingredients.push(ing);
@@ -28,11 +34,28 @@ export class ShoppingListService {
       this.ingredients[index].amount += ing.amount;
   }
 
-  // funzione wrapper, alcune funzioni chiama più volte la funzione add,
+  // in seguito ci sono delle funzioni wrapper, alcune funzioni chiama più volte la funzione add,
   // quindi wrapper è creato per evitare di emettere troppi eventi inutili.
-  public addIngredient(ing: Ingredient){
+  public ingsToShoppingList(ings: Ingredient[]) {
+    for (let ing of ings)
+      this._addIngredient(ing);
+
+      this.updatedSub.next();
+  }
+
+  public addIngredient(ing: Ingredient) {
     this._addIngredient(ing);
-    this.updatedEv.emit();
+    this.updatedSub.next();
+  }
+
+  public updateIngredient(ing: Ingredient) {
+    this._updateIngredient(ing);
+    this.updatedSub.next();
+  }
+
+  public _updateIngredient(ing: Ingredient) {
+    let index = this.ingredients.findIndex(ingredient => ingredient.name == ing.name);
+    this.ingredients[index] = ing;
   }
 
   private _deleteIngredient(ing: Ingredient){
@@ -47,13 +70,7 @@ export class ShoppingListService {
   // funzione wrapper
   public deleteIngredient(ing: Ingredient){
     this._deleteIngredient(ing);
-    this.updatedEv.emit();
+    this.updatedSub.next();
   }
 
-  public ingsToShoppingList(ings: Ingredient[]) {
-    for (let ing of ings)
-      this._addIngredient(ing);
-
-    this.updatedEv.emit();
-  }
 }
