@@ -1,18 +1,18 @@
 <div *ngIf="recipe" class="mt-5 ms-5">
   <div class="row">
     <div class="col-md-12">
-      <img [src]="recipe.getImagePath()" alt="{{ recipe.getName() }}" class="img-responsive">
+      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive">
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <h1>{{ recipe.getName() }}</h1>
+      <h1>{{ recipe.name }}</h1>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div class="btn-group" ngbDropdown>
         <button type="button" class="btn btn-primary" ngbDropdownToggle id="ddm1">
           Manage Recipe
@@ -20,9 +20,12 @@
         <ul ngbDropdownMenu aria-labelledby="ddm1">
           <li><a ngbDropdownItem (click)="toShoppingList()">To Shopping List</a></li>
           <li><a ngbDropdownItem routerLink="edit">Edit Recipe</a></li>
-          <li><a ngbDropdownItem>Delete Recipe</a></li>
+          <li><a ngbDropdownItem (click)="deleteRecipe()">Delete Recipe</a></li>
         </ul>
       </div>
+    </div>
+    <div class="col-md-6 mt-2">
+      <span class="alert btn-success" *ngIf="showDone">To Shopping List Done</span>
     </div>
   </div>
 
@@ -43,14 +46,14 @@
 
   <div class="row">
     <div class="col-md-12">
-      {{ recipe.getDescription() }}
+      {{ recipe.description }}
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ing of recipe.getIngredients()">
+        <li class="list-group-item" *ngFor="let ing of recipe.ingredients">
           {{ ing.name }} - {{ ing.amount }}
         </li>
       </ul>

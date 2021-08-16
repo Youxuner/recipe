@@ -16,7 +16,7 @@ export class RecipeResolver implements Resolve<Recipe> {
     ): Recipe | Observable<Recipe> | Promise<Recipe> {
     let recipe = this.recipeService.getRecipe(+route.params["id"]);
 
-    return recipe?recipe:{} as Recipe;
+    return recipe;
   }
 
 }

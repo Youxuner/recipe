@@ -1,16 +1,16 @@
-<div class="card" [routerLink]="[recipe.getId()]" routerLinkActive="border-primary text-primary">
+<div class="card" [routerLink]="[recipe.id]" routerLinkActive="border-primary text-primary">
   <div class="row">
     <div class="col-md-8">
       <div class="card-body">
-        <h4 class="card-title">{{ recipe.getName() }}</h4>
-        <p class="card-text">{{ recipe.getDescription() }}</p>
+        <h4 class="card-title">{{ recipe.name }}</h4>
+        <p class="card-text">{{ recipe.description }}</p>
       </div>
     </div>
     <div class="col-md-4">
       <img
         class="rounded-end img-fluid"
-        [src]="recipe.getImagePath()"
-        alt="{{ recipe.getName() }}"
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
         style="max-height: 150px"
       />
     </div>

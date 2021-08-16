@@ -15,6 +15,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy, CanComponentDea
 
   // @ViewChild("nameInput") nameElem: ElementRef = new ElementRef(HTMLInputElement);
   // @ViewChild("amountInput") amountElem: ElementRef = new ElementRef(HTMLInputElement);
+  private index: number;
   private ingredient: Ingredient;
   private subId: Subscription;
   public editMode = false;
@@ -25,6 +26,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy, CanComponentDea
   ngOnInit(): void {
     this.subId = this.service.editSub.subscribe((i) => {
       this.editMode = true;
+      this.index = i;
       this.ingredient = this.service.getIngredient(i);
       this.form.setValue(this.ingredient);
     })
@@ -34,9 +36,9 @@ export class ShoppingEditComponent implements OnInit, OnDestroy, CanComponentDea
     this.subId.unsubscribe();
   }
 
-  public addIngredient(form: NgForm) {
-    let name = form.value.name;
-    let amount = form.value.amount;
+  public onSubmit() {
+    let name = this.form.value.name;
+    let amount = this.form.value.amount;
     // console.log(amount);
     // if (amount <= 0)
     // {
@@ -46,14 +48,22 @@ export class ShoppingEditComponent implements OnInit, OnDestroy, CanComponentDea
 
     let ingredient = new Ingredient(name, amount);
     if (this.editMode)
-      this.service.updateIngredient(ingredient);
+      this.service.updateIngredient(this.index, ingredient);
     else
       this.service.addIngredient(ingredient);
+
+    this.reset();
   }
 
-  public deleteIngredient(form: NgForm) {
-    let ing = new Ingredient(form.value.name, form.value.amount);
+  public deleteIngredient() {
+    let ing = new Ingredient(this.form.value.name, this.form.value.amount);
     this.service.deleteIngredient(ing);
+    this.reset();
+  }
+
+  public reset() {
+    this.editMode = false;
+    this.form.reset();
   }
 
   public canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {

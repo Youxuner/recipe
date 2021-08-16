@@ -15,11 +15,12 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   public ingredients: Ingredient[] = [];
   private subId = new Subscription();
   constructor(private service: ShoppingListService, private router: Router) {
-    this.ingredients = this.service.getIngredients();
+
   }
 
   ngOnInit(): void {
-    this.subId = this.service.updatedSub.subscribe(() => this.ingredients = this.service.getIngredients());
+    this.ingredients = this.service.getIngredients();
+    this.subId = this.service.updatedSub.subscribe((ingredients: Ingredient[]) => this.ingredients = ingredients);
   }
 
   ngOnDestroy(): void {
