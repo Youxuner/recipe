@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../services/auth.service";
+import { RecipeService } from "../services/recipe.service";
+import { Recipe } from "../shared/recipe.model";
 
 @Component({
     selector: "app-header",
@@ -11,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
     public collapsed: boolean = true;
     public active = 1;
-    constructor(private router: Router, private authService: AuthService) {
+    constructor(private router: Router, private authService: AuthService, private service: RecipeService) {
 
     }
 
@@ -25,6 +27,14 @@ export class HeaderComponent implements OnInit {
 
     public logout() {
       this.authService.logout();
+    }
+
+    public saveData() {
+      this.service.storeRecipes().subscribe();
+    }
+
+    public fetchData() {
+      this.service.fetchRecipes().subscribe((recipes: Recipe[]) => this.service.setRecipes(recipes));
     }
 
 }

@@ -3,53 +3,94 @@ import { Recipe } from '../shared/recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
 import { Observable, Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipeService {
-
   // @Output() public selectEv = new EventEmitter<Recipe>();
-  private baseUrl = "https://my-first-backend-ae87c-default-rtdb.europe-west1.firebasedatabase.app/recipes.json";
+  private baseUrl =
+    'https://my-first-backend-ae87c-default-rtdb.europe-west1.firebasedatabase.app/recipes';
   private recipes: Recipe[];
   private nextId: number;
-  public updated = new Subject<Recipe[]>();
-  constructor(private slService: ShoppingListService, private http: HttpClient) {
-    this.getRecipes().subscribe((recipes => this.recipes = recipes));
+  public updated = new Subject();
+  constructor(
+    private slService: ShoppingListService,
+    private http: HttpClient
+  ) {}
+
+  // Get
+  public fetchRecipes(): Observable<Recipe[]> {
+    let url = this.baseUrl + '.json';
+
+    return this.http
+      .get(url, {
+        headers: new HttpHeaders({ 'Custom-Message': 'Hello' }),
+        params: new HttpParams().set('print', 'pretty'),
+      })
+      .pipe(
+        map((response) => {
+          let recipes: Recipe[] = [];
+          for (let key in response) {
+            let recipe: Recipe = response[key];
+            recipe = {
+              ...recipe,
+              ingredients: recipe.ingredients ? recipe.ingredients : [],
+            };
+            recipes.push(recipe);
+          }
+          return recipes;
+        }),
+        tap((recipes: Recipe[]) => {
+          this.setRecipes(recipes);
+          this.nextId = recipes.length;
+        })
+      );
   }
 
-  public getRecipes(): Observable<Recipe[]> {
-    // this.recipes = [];
-    return this.http.get(this.baseUrl).pipe(map(response => {
-      let recipes: Recipe[] = [];
-      for (let key in response) {
-        recipes.push(response[key]);
-      }
-      return recipes;
-    }));
+  public getRecipes() {
+    return this.recipes;
   }
 
+  public setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.updated.next();
+  }
+  // Get ?
   public getRecipe(id: number) {
     return this.recipes.find((recipe: Recipe) => recipe.id === id);
   }
 
-  // TODO
-  public updateRecipe(recipe: Recipe) {
-    let index = this.recipes.findIndex(rec => rec.id == recipe.id);
-    this.recipes[index] = recipe;
-
-    this.updated.next(this.recipes.slice());
-  }
-
+  // Post ?
   public addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
-    this.http.post(this.baseUrl, recipe)
-    .subscribe();
+    // return this.http.post(this.baseUrl, recipe, {
+    //   observe: "response"
+    // });
+  }
 
-    this.updated.next(this.recipes.slice());
+  // Put ?
+  public updateRecipe(recipe: Recipe) {
+    let index = this.recipes.findIndex((rec) => rec.id == recipe.id);
+    this.recipes[index] = recipe;
+    // let url = this.baseUrl + "/" + index;
+    // return this.http.put(url, recipe);
+  }
+
+  // Put
+  public storeRecipes(): Observable<any> {
+    let url = this.baseUrl + '.json';
+    return this.http.put(url, this.recipes);
+  }
+
+  // Delete ?
+  public deleteRecipe(recipe: Recipe) {
+    let index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
+    // let url = this.baseUrl + "/" + index;
+    // return this.http.delete(url);
   }
 
   public getNewId() {
@@ -60,13 +101,5 @@ export class RecipeService {
 
   public ingsToShoppingList(ings: Ingredient[]) {
     return this.slService.ingsToShoppingList(ings);
-  }
-
-  // TODO
-  public deleteRecipe(recipe: Recipe) {
-    let index = this.recipes.indexOf(recipe);
-    this.recipes.splice(index, 1);
-
-    this.updated.next(this.recipes.slice());
   }
 }

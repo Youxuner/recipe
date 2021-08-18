@@ -92,6 +92,7 @@ export class RecipeEditComponent implements OnInit {
       this.service.addRecipe(recipe);
     }
 
+    this.service.updated.next();
     this.router.navigate([".."], {relativeTo: this.route});
 
   }

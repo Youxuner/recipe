@@ -23,8 +23,7 @@
       </ul>
 
       <ul class="nav navbar-nav">
-        <li class="nav-item"><button class="btn btn-default" (click)="login()">Login</button></li>
-        <li class="nav-item"><button class="btn btn-default" (click)="logout()">Logout</button></li>
+        <li class="nav-item"><button class="btn btn-default" routerLink="/auth">Authenticate</button></li>
         <!-- display="dynamic" risolve il problema della visualizzazione del dropdown list item -->
         <li ngbDropdown class="nav-link" display="dynamic">
 
@@ -33,8 +32,8 @@
           </div>
 
           <div ngbDropdownMenu aria-labelledby="navbarDropdown" >
-            <a ngbDropdownItem >Save Data</a>
-            <a ngbDropdownItem >Fetch Data</a>
+            <a ngbDropdownItem (click)="saveData()">Save Data</a>
+            <a ngbDropdownItem (click)="fetchData()">Fetch Data</a>
             <div class="dropdown-divider"></div>
             <a ngbDropdownItem >Something else here</a>
           </div>

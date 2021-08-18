@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthComponent } from './auth/auth.component';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
@@ -37,16 +38,14 @@ const routes: Routes = [
         },
         {
           path: ":id",
-          pathMatch: "full",
           component: RecipeDetailComponent,
-          resolve: {
-            recipe: RecipeResolver
-          }
+          resolve: [RecipeResolver]
         },
         {
           path: ":id/edit",
           pathMatch: "full",
-          component: RecipeEditComponent
+          component: RecipeEditComponent,
+          resolve: [RecipeResolver]
         },
       ]
   },
@@ -76,6 +75,11 @@ const routes: Routes = [
     data: {
       message: "Page not found!"
     }
+  },
+  {
+    path: "auth",
+    pathMatch: "full",
+    component: AuthComponent
   },
   {
     path: "**",
