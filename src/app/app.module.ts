@@ -25,6 +25,11 @@ import { AuthComponent } from './auth/auth.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
+const interceptor = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptorService,
+  multi: true
+};
 
 @NgModule({
   declarations: [
@@ -52,11 +57,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard, AuthService, CanDeactivateGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptorService,
-    multi: true
-  }],
+  providers: [AuthGuard, AuthService, CanDeactivateGuard, interceptor ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

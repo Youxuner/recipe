@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class AuthComponent implements OnInit {
 
   public isLoginMode = true;
   public isLoading = false;
-  constructor(private authService: AuthService) { }
+  public error: string = null;
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +23,6 @@ export class AuthComponent implements OnInit {
   }
 
   public onSubmit(form: NgForm) {
-
     if (form.invalid) return;
 
     let email = form.value.email;
@@ -30,14 +31,23 @@ export class AuthComponent implements OnInit {
     if (!this.isLoginMode)
       this.authService
         .signup(email, password)
-        .subscribe(resData => console.log(resData),
-                   error => console.log(error.message),
-                   () => this.isLoading = false);
-
+        .subscribe(
+          () => this.router.navigate(["/recipes"]),
+          error => {
+            this.isLoading = false;
+            this.error = error;
+          },
+          () => this.isLoading = false
+        );
     else
-
-
-    return;
+      this.authService.login(email, password).subscribe(
+        () => this.router.navigate(["/recipes"]),
+        error => {
+          this.isLoading = false;
+          this.error = error;
+        },
+        () => this.isLoading = false
+      );
   }
 
 }
