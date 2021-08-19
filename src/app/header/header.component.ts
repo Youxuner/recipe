@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public collapsed: boolean = true;
   public active = 1;
   public isAuthenticated = false;
+  public email: string = '';
   private uerSubId = new Subscription();
   constructor(
     private router: Router,
@@ -23,7 +24,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.uerSubId = this.authService.userSub.subscribe(user => this.isAuthenticated = !!user);
+    this.uerSubId = this.authService.userSub.subscribe((user) => {
+      this.isAuthenticated = !!user;
+      this.email = user?user.email:"";
+    });
   }
 
   ngOnDestroy(): void {
@@ -40,5 +44,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.service
       .fetchRecipes()
       .subscribe((recipes: Recipe[]) => this.service.setRecipes(recipes));
+  }
+
+  public toRouter() {
+    if(this.isAuthenticated)
+      this.router.navigate(["/assets"]);
+    else
+      this.router.navigate(["/auth"]);
   }
 }

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light border-bottom shadow-sm px-4">
   <div class="container-fluid">
     <!-- Part header -->
-    <a class="navbar-brand" routerLink="/recipes">Recipe Book</a>
+    <a class="navbar-brand" (click)="toRouter()">Recipe Book</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -37,6 +37,9 @@
           <button class="btn btn-default" routerLink="/auth">
             Authenticate
           </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-default" type="button" *ngIf="isAuthenticated">{{ email }}</button>
         </li>
         <li class="nav-item">
           <button

@@ -16,15 +16,15 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "recipes",
+    redirectTo: "auth",
     pathMatch: "full",
   },
   {
     path: "recipes",
     // pathMatch: "full",
     component: RecipesComponent,
-    // canActivate: [AuthGuard],
-    // canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
       children: [
         {
           path: "",

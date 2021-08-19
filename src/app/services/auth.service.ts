@@ -3,7 +3,7 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, throwError } from 'rxjs';
+import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from '../shared/user.model';
 
@@ -11,8 +11,7 @@ const key = 'AIzaSyCM9-CVyBXo0PXIUh5U50uOyxhXKJHCq5Q';
 const signUpUrl =
   'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + key;
 const loginUrl =
-  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
-  key;
+  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + key;
 
 export interface AuthResponseData {
   idToken: string;
@@ -26,17 +25,15 @@ export interface AuthResponseData {
 @Injectable()
 export class AuthService {
   private loggedIn: boolean = false;
-  public userSub: Subject<User>;
+  public userSub = new BehaviorSubject<User>(null);
+  public user: User;
   constructor(private http: HttpClient) {
-    this.userSub = new Subject<User>();
     console.log(this.userSub);
   }
 
   public isAuthenticated() {
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.loggedIn);
-      }, 800);
+    const promise = new Promise((resolve) => {
+      resolve(!!this.user);
     });
 
     return promise;
@@ -121,6 +118,7 @@ export class AuthService {
       expirationDate
     );
 
+    this.user = user;
     this.userSub.next(user);
   }
 }
