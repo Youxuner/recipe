@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light border-bottom shadow-sm px-4">
   <div class="container-fluid">
     <!-- Part header -->
-    <a class="navbar-brand" (click)="toRouter()">Recipe Book</a>
+    <a class="navbar-brand" routerLink="/recipes">Recipe Book</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,17 +16,19 @@
       <ul class="nav navbar-nav me-auto">
         <li class="nav-item">
           <a
-            class="nav-link text-dark btn btn-default"
+            class="nav-link text-dark"
             aria-current="page"
             routerLink="recipes"
+            routerLinkActive="border-bottom border-dark"
             *ngIf="isAuthenticated"
             >Recipes</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link text-dark btn btn-default"
+            class="nav-link text-dark"
             routerLink="shopping-list"
+            routerLinkActive="border-bottom border-dark"
             >Shopping List</a
           >
         </li>
@@ -34,16 +36,16 @@
 
       <ul class="nav navbar-nav">
         <li class="nav-item" *ngIf="!isAuthenticated">
-          <button class="btn btn-default" routerLink="/auth">
+          <button class="btn btn-outline-dark" routerLink="/auth">
             Authenticate
           </button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-default" type="button" *ngIf="isAuthenticated">{{ email }}</button>
+          <a class="nav-link text-dark" *ngIf="isAuthenticated">{{ email }}</a>
         </li>
         <li class="nav-item">
           <button
-            class="btn btn-default"
+            class="btn btn-outline-dark"
             (click)="logout()"
             *ngIf="isAuthenticated"
           >

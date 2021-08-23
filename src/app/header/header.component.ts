@@ -1,10 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../services/auth.service';
-import { RecipeService } from '../services/recipe.service';
+import { AuthService } from '../auth/services/auth.service';
+import { RecipeService } from '../recipes/services/recipe.service';
 import { Recipe } from '../shared/recipe.model';
-import { User } from '../shared/user.model';
 
 @Component({
   selector: 'app-header',
@@ -34,7 +33,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.uerSubId.unsubscribe();
   }
 
-  public logout() {}
+  public logout() {
+    this.authService.logout();
+  }
 
   public saveData() {
     this.service.storeRecipes().subscribe();
@@ -44,12 +45,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.service
       .fetchRecipes()
       .subscribe((recipes: Recipe[]) => this.service.setRecipes(recipes));
-  }
-
-  public toRouter() {
-    if(this.isAuthenticated)
-      this.router.navigate(["/assets"]);
-    else
-      this.router.navigate(["/auth"]);
   }
 }

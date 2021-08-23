@@ -1,10 +1,13 @@
+<ng-template appPlaceholder></ng-template>
+
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 col-xs-12 col-md-offset-3">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 col-xs-12">
       <div class="alert alert-danger" *ngIf="error">
         {{ error }}
       </div>
-      <div *ngIf="isLoading">
+      <!-- <app-alert [message]="error" *ngIf="error"></app-alert> -->
+      <div *ngIf="isLoading" class="text-center">
         <app-loading-spinner></app-loading-spinner>
       </div>
       <form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="!isLoading">

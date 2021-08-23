@@ -1,11 +1,10 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Recipe } from '../shared/recipe.model';
-import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from './shopping-list.service';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { exhaustMap, map, take, tap } from 'rxjs/operators';
-import { AuthService } from './auth.service';
+import { map, tap } from 'rxjs/operators';
+import { Recipe } from 'src/app/shared/recipe.model';
+import { Ingredient } from 'src/app/shared/ingredient.model';
+import { ShoppingListService } from 'src/app/shopping-list/services/shopping-list.service';
 
 @Injectable({
   providedIn: 'root',
@@ -19,37 +18,33 @@ export class RecipeService {
   public updated = new Subject();
   constructor(
     private slService: ShoppingListService,
-    private http: HttpClient,
-    private authService: AuthService
+    private http: HttpClient
   ) {}
 
   // Get
   public fetchRecipes(): Observable<Recipe[]> {
-    return this.authService.userSub.pipe(
-      take(1),
-      exhaustMap((user) =>
-        this.http.get(this.baseUrl, {
-          headers: new HttpHeaders({ 'Custom-Message': 'Hello' }),
-          params: new HttpParams().set('print', 'pretty').set("auth", user.token),
-        })
-      ),
-      map((response) => {
-        let recipes: Recipe[] = [];
-        for (let key in response) {
-          let recipe: Recipe = response[key];
-          recipe = {
-            ...recipe,
-            ingredients: recipe.ingredients ? recipe.ingredients : [],
-          };
-          recipes.push(recipe);
-        }
-        return recipes;
-      }),
-      tap((recipes: Recipe[]) => {
-        this.setRecipes(recipes);
-        this.nextId = recipes.length;
+    return this.http
+      .get(this.baseUrl, {
+        headers: new HttpHeaders({ 'Custom-Message': 'Hello' }),
       })
-    );
+      .pipe(
+        map((response) => {
+          let recipes: Recipe[] = [];
+          for (let key in response) {
+            let recipe: Recipe = response[key];
+            recipe = {
+              ...recipe,
+              ingredients: recipe.ingredients ? recipe.ingredients : [],
+            };
+            recipes.push(recipe);
+          }
+          return recipes;
+        }),
+        tap((recipes: Recipe[]) => {
+          this.setRecipes(recipes);
+          this.nextId = recipes.length;
+        })
+      );
   }
 
   public getRecipes() {

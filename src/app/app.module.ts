@@ -1,63 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DropdownDirective } from './shared/dropdown.directive';
-import { AuthGuard } from './services/auth-guard.service';
-import { AuthService } from './services/auth.service';
-import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { AuthInterceptorService } from './services/auth-interceptor.service';
-import { AuthComponent } from './auth/auth.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-
-const interceptor = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: AuthInterceptorService,
-  multi: true
-};
+import { HttpClientModule } from "@angular/common/http";
+import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    PageNotFoundComponent,
-    ErrorPageComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    AuthComponent,
-    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    NgbModule,
-    ReactiveFormsModule,
+    RecipesModule,
+    ShoppingListModule,
     HttpClientModule,
+    AuthModule,
+    SharedModule,
+    CoreModule
   ],
-  providers: [AuthGuard, AuthService, CanDeactivateGuard, interceptor ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

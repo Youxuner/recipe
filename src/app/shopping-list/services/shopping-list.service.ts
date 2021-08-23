@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Ingredient } from '../shared/ingredient.model';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Injectable({
   providedIn: 'root'
