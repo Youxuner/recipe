@@ -5,6 +5,9 @@ import { map, tap } from 'rxjs/operators';
 import { Recipe } from 'src/app/shared/recipe.model';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from 'src/app/shopping-list/services/shopping-list.service';
+import { Store } from '@ngrx/store';
+import { AddIngredients } from 'src/app/shopping-list/store/shopping-list.actions';
+import { AppState } from 'src/app/shopping-list/store/state';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +21,7 @@ export class RecipeService {
   public updated = new Subject();
   constructor(
     private slService: ShoppingListService,
+    private store: Store<AppState>,
     private http: HttpClient
   ) {}
 
@@ -96,6 +100,7 @@ export class RecipeService {
   }
 
   public ingsToShoppingList(ings: Ingredient[]) {
-    return this.slService.ingsToShoppingList(ings);
+    // return this.slService.ingsToShoppingList(ings);
+    this.store.dispatch(new AddIngredients(ings));
   }
 }

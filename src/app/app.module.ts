@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from "@angular/common/http";
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
 
 @NgModule({
   declarations: [
@@ -19,12 +18,12 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecipesModule,
-    ShoppingListModule,
     HttpClientModule,
-    AuthModule,
+    StoreModule.forRoot({
+      shoppingList: shoppingListReducer
+    }),
     SharedModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

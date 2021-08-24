@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from 'src/app/shared/user.model';
+import { environment } from 'src/environments/environment';
 
-const key = 'AIzaSyCM9-CVyBXo0PXIUh5U50uOyxhXKJHCq5Q';
+
+
 const signUpUrl =
-  'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + key;
+  'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey;
 const loginUrl =
-  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
-  key;
+  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey;
 
 export interface AuthResponseData {
   idToken: string;
