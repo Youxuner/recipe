@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 import { Recipe } from 'src/app/shared/recipe.model';
 import { Ingredient } from 'src/app/shared/ingredient.model';
-import { ShoppingListService } from 'src/app/shopping-list/services/shopping-list.service';
 import { Store } from '@ngrx/store';
 import { AddIngredients } from 'src/app/shopping-list/store/shopping-list.actions';
 import { AppState } from 'src/app/shopping-list/store/state';
@@ -20,7 +19,6 @@ export class RecipeService {
   private nextId: number;
   public updated = new Subject();
   constructor(
-    private slService: ShoppingListService,
     private store: Store<AppState>,
     private http: HttpClient
   ) {}
