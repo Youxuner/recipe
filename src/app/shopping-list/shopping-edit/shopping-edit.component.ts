@@ -13,8 +13,9 @@ import { Subscription } from 'rxjs';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate } from 'src/app/services/can-deactivate-guard.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
+import { AppState } from 'src/app/store/app-state';
 import { AddIngredient, DeleteIngredient, StopEdit, UpdateIngredient } from '../store/shopping-list.actions';
-import { AppState } from '../store/state';
+
 
 @Component({
   selector: 'app-shopping-edit',
