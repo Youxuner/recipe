@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import * as act from '../auth/store/auth.actions';
+import * as authAct from '../auth/store/auth.actions';
 import { RecipeService } from '../recipes/services/recipe.service';
-import { Recipe } from '../shared/recipe.model';
+import * as recAct from '../recipes/store/recipe.actions';
+
 import { AppState } from '../store/app-state';
 
 @Component({
@@ -23,10 +24,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // this.uerSubId = this.authService.userSub.subscribe((user) => {
-    //   this.isAuthenticated = !!user;
-    //   this.email = user?user.email:null;
-    // });
 
     this.uerSubId = this.store.select("auth").subscribe(state => {
       this.isAuthenticated = !!state.user;
@@ -39,8 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public logout() {
-    // this.authService.logout();
-    this.store.dispatch(new act.Logout());
+    this.store.dispatch(new authAct.Logout());
   }
 
   public saveData() {
@@ -48,8 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public fetchData() {
-    this.service
-      .fetchRecipes()
-      .subscribe((recipes: Recipe[]) => this.service.setRecipes(recipes));
+    this.store.dispatch(new recAct.FetchRecipes());
   }
 }

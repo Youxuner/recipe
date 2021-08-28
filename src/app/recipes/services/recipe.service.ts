@@ -7,6 +7,7 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Store } from '@ngrx/store';
 import { AddIngredients } from 'src/app/shopping-list/store/shopping-list.actions';
 import { AppState } from 'src/app/store/app-state';
+import { SetRecipes } from '../store/recipe.actions';
 
 
 @Injectable({
@@ -44,7 +45,8 @@ export class RecipeService {
           return recipes;
         }),
         tap((recipes: Recipe[]) => {
-          this.setRecipes(recipes);
+          // this.setRecipes(recipes);
+          this.store.dispatch(new SetRecipes(recipes));
           this.nextId = recipes.length;
         })
       );
@@ -54,10 +56,11 @@ export class RecipeService {
     return this.recipes;
   }
 
-  public setRecipes(recipes: Recipe[]) {
-    this.recipes = recipes;
-    this.updated.next();
-  }
+  // public setRecipes(recipes: Recipe[]) {
+    // this.store.dispatch(new SetRecipes(recipes));
+    // this.recipes = recipes;
+    // this.updated.next();
+  // }
   // Get ?
   public getRecipe(id: number) {
     return this.recipes.find((recipe: Recipe) => recipe.id === id);

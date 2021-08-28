@@ -30,6 +30,7 @@ export class AuthEffects {
   authSignup = createEffect(() =>
     this.actions.pipe(
       ofType(act.SIGNUP_START),
+
       switchMap((authData: act.SignupStart) =>
         this.http
           .post<AuthResponseData>(signupUrl, {
@@ -73,16 +74,17 @@ export class AuthEffects {
       map(() => {
         let userData = JSON.parse(localStorage.getItem('userData'));
 
-        if (!userData) return { type: "" };
+        if (!userData) return { type: 'Ignore' };
         let expirationDate = new Date(userData._tokenExpirationDate);
         let user: User = new User(
           userData.email,
           userData.id,
           userData._token,
-          expirationDate
+          expirationDate,
+          false
         );
 
-        if (!user.token) return { type: "" };
+        if (!user.token) return { type: 'Ignore' };
         let timeout = expirationDate.getTime() - new Date().getTime();
         this.authService.setLogoutTimer(timeout);
         return new act.AuthenticateSuccess(user);
@@ -107,7 +109,9 @@ export class AuthEffects {
     () =>
       this.actions.pipe(
         ofType(act.AUTHENTICATE_SUCCESS),
-        tap(() => this.router.navigate(['/']))
+        tap((action: act.AuthenticateSuccess) => {
+          if (action.payload.redirect) this.router.navigate(['/']);
+        })
       ),
     { dispatch: false }
   );
@@ -126,7 +130,8 @@ export class AuthEffects {
       resData.email,
       resData.localId,
       resData.idToken,
-      expirationDate
+      expirationDate,
+      true
     );
     localStorage.setItem('userData', JSON.stringify(user));
     this.authService.setLogoutTimer(timeout);
