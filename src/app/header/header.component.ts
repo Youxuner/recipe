@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import * as authAct from '../auth/store/auth.actions';
-import { RecipeService } from '../recipes/services/recipe.service';
+// import { RecipeService } from '../recipes/services/recipe.service';
 import * as recAct from '../recipes/store/recipe.actions';
 
 import { AppState } from '../store/app-state';
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public email: string = null;
   private uerSubId = new Subscription();
   constructor(
-    private service: RecipeService,
+    // private service: RecipeService,
     private store: Store<AppState>
   ) {}
 
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   public saveData() {
-    this.service.storeRecipes().subscribe();
+    this.store.dispatch(new recAct.StoreRecipes());
   }
 
   public fetchData() {

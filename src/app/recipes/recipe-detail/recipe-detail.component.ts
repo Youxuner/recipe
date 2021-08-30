@@ -1,28 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { exhaustMap, map, switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import * as shoAct from 'src/app/shopping-list/store/shopping-list.actions';
 import { AppState } from 'src/app/store/app-state';
 import { Recipe } from '../../shared/recipe.model';
-import { RecipeService } from '../services/recipe.service';
+import * as recAct from '../store/recipe.actions';
 
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css'],
 })
-export class RecipeDetailComponent implements OnInit {
+export class RecipeDetailComponent implements OnInit, OnDestroy {
   public recipe: Recipe;
   public showDone = false;
+  private storeSub = new Subscription();
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: RecipeService,
     private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {
-    this.route.params
+    this.storeSub = this.route.params
       .pipe(
         map((params) => +params.id),
         switchMap((id: number) =>
@@ -55,14 +57,18 @@ export class RecipeDetailComponent implements OnInit {
     // );
   }
 
+  ngOnDestroy(): void {
+    this.storeSub.unsubscribe();
+  }
+
   public toShoppingList() {
-    this.service.ingsToShoppingList(this.recipe.ingredients);
+    // this.service.ingsToShoppingList(this.recipe.ingredients);
+    this.store.dispatch(new shoAct.AddIngredients(this.recipe.ingredients));
     this.toShowDone();
   }
 
   public deleteRecipe() {
-    this.service.deleteRecipe(this.recipe);
-    this.service.updated.next();
+    this.store.dispatch(new recAct.DeleteRecipe(this.recipe));
     this.router.navigate(['..'], { relativeTo: this.route });
   }
 

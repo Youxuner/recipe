@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Recipe } from 'src/app/shared/recipe.model';
 import { AppState } from 'src/app/store/app-state';
 import { RecipeService } from '../services/recipe.service';
+import { AddRecipe, UpdateRecipe } from '../store/recipe.actions';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -18,7 +19,6 @@ export class RecipeEditComponent implements OnInit {
   public recipeForm: FormGroup;
   constructor(
     private route: ActivatedRoute,
-    private service: RecipeService,
     private router: Router,
     private store: Store<AppState>
   ) {}
@@ -41,6 +41,7 @@ export class RecipeEditComponent implements OnInit {
       this.store
         .select('recipe')
         .pipe(
+          take(1),
           map((state) => {
             return state.recipes.find((rec) => rec.id === this.id);
           })
@@ -97,8 +98,6 @@ export class RecipeEditComponent implements OnInit {
   }
 
   public onSubmit() {
-    // console.log(this.recipeForm.value);
-    let id = this.service.getNewId();
     let name = this.recipeForm.value.name;
     let imagePath = this.recipeForm.value.imagePath;
     let description = this.recipeForm.value.description;
@@ -112,13 +111,15 @@ export class RecipeEditComponent implements OnInit {
         imagePath,
         ingredients
       );
-      this.service.updateRecipe(recipe);
+      this.store.dispatch(new UpdateRecipe(recipe));
     } else {
-      let recipe = new Recipe(id, name, description, imagePath, ingredients);
-      this.service.addRecipe(recipe);
+      let id: number;
+      this.store.select("recipe").pipe(take(1)).subscribe(state => {
+        id = state.recipes.length;
+        let recipe = new Recipe(id, name, description, imagePath, ingredients);
+        this.store.dispatch(new AddRecipe(recipe));
+      });
     }
-
-    this.service.updated.next();
     this.router.navigate(['..'], { relativeTo: this.route });
   }
 
