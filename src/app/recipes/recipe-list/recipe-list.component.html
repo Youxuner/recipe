@@ -4,5 +4,8 @@
   </div>
 </div>
 
-<hr>
-<app-recipe-item *ngFor="let recipe of ( recipes | async ).recipes" [recipe]="recipe"></app-recipe-item>
+<hr />
+<app-recipe-item
+  *ngFor="let recipe of (recipes | async).recipes"
+  [recipe]="recipe"
+></app-recipe-item>

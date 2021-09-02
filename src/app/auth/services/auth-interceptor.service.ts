@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { exhaustMap, map, take, tap } from 'rxjs/operators';
 import { AppState } from 'src/app/store/app-state';
-import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
@@ -19,20 +18,22 @@ export class AuthInterceptorService implements HttpInterceptor {
   ) {}
 
   public intercept(req: HttpRequest<any>, next: HttpHandler) {
-    console.log('Request is on its way.');
-    console.log(req);
+    // console.log('Request is on its way.');
+    // console.log(req);
 
     return this.store.select('auth').pipe(
       take(1),
       map((state) => state.user),
       exhaustMap((user) => {
-        if (!user) return next.handle(req).pipe(tap(this.printRes));
+        if (!user) return next.handle(req);
+          // .pipe(tap(this.printRes));
         let modifiedReq = req.clone({
           params: new HttpParams()
             .set('auth', user.token)
             .set('print', 'pretty'),
         });
-        return next.handle(modifiedReq).pipe(tap(this.printRes));
+        return next.handle(modifiedReq);
+        // .pipe(tap(this.printRes));
       })
     );
   }
