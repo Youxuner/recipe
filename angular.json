@@ -13,6 +13,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "zh" : {
+            "baseHref": "/cn/",
+            "translation": "src/locale/messages.cn.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -34,7 +43,10 @@
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "localize" : ["zh"],
+            "aot": true,
+            "i18nMissingTranslation": "warning"
           },
           "configurations": {
             "production": {
@@ -65,6 +77,10 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "zh" : {
+              "localize" : ["zh"],
+              "main": "src/main.zh.ts"
             }
           },
           "defaultConfiguration": "production"
@@ -77,6 +93,9 @@
             },
             "development": {
               "browserTarget": "my-first-project:build:development"
+            },
+            "zh": {
+              "browserTarget": "my-first-project:build:zh"
             }
           },
           "defaultConfiguration": "development"
