@@ -147,21 +147,21 @@ export class AuthEffects {
 
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
-        error = 'The email address is already in use by another account.';
+        error = $localize`The email address is already in use by another account.`;
         break;
       case 'OPERATION_NOT_ALLOWED':
-        error = 'Password sign-in is disabled for this project';
+        error = $localize`Password sign-in is disabled for this project`;
         break;
       case 'TOO_MANY_ATTEMPTS_TRY_LATER':
         error =
-          'We have blocked all requests from this device due to unusual activity. Try again later.';
+        $localize`We have blocked all requests from this device due to unusual activity. Try again later.`;
         break;
       case 'EMAIL_NOT_FOUND':
       case 'INVALID_PASSWORD':
-        error = "Email o Password isn't correct.";
+        error = $localize`Email o Password isn't correct.`;
         break;
       case 'USER_DISABLED':
-        error = 'For this user please contact the administrator.';
+        error = $localize`For this user please contact the administrator.`;
         break;
       default:
         error = errorRes.error.error.message;

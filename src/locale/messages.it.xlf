@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4374589633190318100" datatype="html">
+        <source>Email: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8281836453106783702" datatype="html">
+        <source>Password: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5587435316716433031" datatype="html">
+        <source>{VAR_SELECT, select, true {Login} , false {Sign Up}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8856905278208146821" datatype="html">
+        <source> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login}, false {Sign Up} }"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7669834072178630268" datatype="html">
+        <source> Switch to <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up}, false {Login} }"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2846422309073202915" datatype="html">
+        <source>{VAR_SELECT, select, true {Sign Up} , false {Login}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8855266570106931782" datatype="html">
+        <source>The email address is already in use by another account.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3766857524135728286" datatype="html">
+        <source>Password sign-in is disabled for this project</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3769771873436042433" datatype="html">
+        <source>We have blocked all requests from this device due to unusual activity. Try again later.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4984759672966139917" datatype="html">
+        <source>Email o Password isn&apos;t correct.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6201841731208000483" datatype="html">
+        <source>For this user please contact the administrator.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -19,6 +19,10 @@
           "zh" : {
             "baseHref": "/cn/",
             "translation": "src/locale/messages.cn.xlf"
+          },
+          "it" : {
+            "baseHref": "/it/",
+            "translation": "src/locale/messages.it.xlf"
           }
         }
       },
@@ -44,7 +48,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
-            "localize" : ["zh"],
+            "localize" : false,
             "aot": true,
             "i18nMissingTranslation": "warning"
           },
@@ -81,6 +85,10 @@
             "zh" : {
               "localize" : ["zh"],
               "main": "src/main.zh.ts"
+            },
+            "it" : {
+              "localize" : ["it"],
+              "main": "src/main.it.ts"
             }
           },
           "defaultConfiguration": "production"
@@ -96,6 +104,9 @@
             },
             "zh": {
               "browserTarget": "my-first-project:build:zh"
+            },
+            "it" : {
+              "browserTarget": "my-first-project:build:it"
             }
           },
           "defaultConfiguration": "development"
