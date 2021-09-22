@@ -18,33 +18,33 @@
           <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5587435316716433031" datatype="html">
-        <source>{VAR_SELECT, select, true {Login} , false {Sign Up}}</source>
-        <target state="translated">{VAR_SELECT, select, true {登录} , false {注册}}</target>
+      <trans-unit id="34299401780255660" datatype="html">
+        <source>{VAR_SELECT, select, true {Login} false {Sign Up}}</source>
+        <target state="translated">{VAR_SELECT, select, true {登录} false {注册}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8856905278208146821" datatype="html">
-        <source> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login}, false {Sign Up} }"/> </source>
-        <target state="translated"> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login}, false {Sign Up} }"/> </target>
+        <source> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login} false {Sign Up} }"/> </source>
+        <target state="translated"> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login} false {Sign Up} }"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">44,45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7669834072178630268" datatype="html">
-        <source> Switch to <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up}, false {Login} }"/> </source>
-        <target state="translated"> 切换到 <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up}, false {Login} }"/> </target>
+        <source> Switch to <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up} false {Login} }"/> </source>
+        <target state="translated"> 切换到 <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up} false {Login} }"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">51,52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2846422309073202915" datatype="html">
-        <source>{VAR_SELECT, select, true {Sign Up} , false {Login}}</source>
-        <target state="translated">{VAR_SELECT, select, true {注册} , false {登录}}</target>
+      <trans-unit id="8603978838761643996" datatype="html">
+        <source>{VAR_SELECT, select, true {Sign Up} false {Login}}</source>
+        <target state="translated">{VAR_SELECT, select, true {注册} false {登录}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">51</context>
@@ -84,7 +84,7 @@
       </trans-unit>
       <trans-unit id="6201841731208000483" datatype="html">
         <source>For this user please contact the administrator.</source>
-        <target state="translated">请联系管理员。</target>
+        <target state="translated">对于此用户，请联系管理员。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">164</context>

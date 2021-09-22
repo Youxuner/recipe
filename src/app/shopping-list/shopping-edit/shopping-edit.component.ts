@@ -100,7 +100,7 @@ export class ShoppingEditComponent
   public canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
     if (!this.form.value.name) return true;
     if (!this.form.value.amount) return true;
-    let response = confirm('Do you want to discard the info in form?');
+    let response = confirm($localize`Do you want to discard the info in form?`);
     if (response) this.form.reset();
     return response;
   }

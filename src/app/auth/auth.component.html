@@ -41,14 +41,14 @@
             type="submit"
             [disabled]="f.invalid" i18n
           >
-            { isLoginMode, select, true {Login}, false {Sign Up} }
+            { isLoginMode, select, true {Login} false {Sign Up} }
           </button>
           <button
             class="btn btn-primary"
             (click)="onSwitchMode()"
             type="button" i18n
           >
-            Switch to { isLoginMode, select, true {Sign Up}, false {Login} }
+            Switch to { isLoginMode, select, true {Sign Up} false {Login} }
           </button>
         </div>
       </form>
