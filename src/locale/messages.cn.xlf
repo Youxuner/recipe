@@ -90,6 +90,248 @@
           <context context-type="linenumber">164</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2310759883928189804" datatype="html">
+        <source>Recipe Book</source>
+        <target state="translated">菜谱书</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">info of recipes</note>
+        <note priority="1" from="meaning">name application</note>
+      </trans-unit>
+      <trans-unit id="598789626028399324" datatype="html">
+        <source>Recipes</source>
+        <target state="translated">菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3716561241149069140" datatype="html">
+        <source>Shopping List</source>
+        <target state="translated">购物清单</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6659583824626034043" datatype="html">
+        <source> Authenticate </source>
+        <target state="translated">登录/注册</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7504940227782988572" datatype="html">
+        <source> Logout </source>
+        <target state="translated"> 登出 </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3897348120591552265" datatype="html">
+        <source>Manage</source>
+        <target state="translated">管理</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1329517097221232723" datatype="html">
+        <source>Save Data</source>
+        <target state="translated">保存数据</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9180095768747711142" datatype="html">
+        <source>Fetch Data</source>
+        <target state="translated">获取数据</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1981170756577848176" datatype="html">
+        <source>Something else here</source>
+        <target state="translated">其他操作</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">other operation</note>
+      </trans-unit>
+      <trans-unit id="8578416858223032129" datatype="html">
+        <source> Manage Recipe </source>
+        <target state="translated">管理菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="972176427659747051" datatype="html">
+        <source>To Shopping List</source>
+        <target state="translated">添加用料到购物清单</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">add ingredients to shopping list</note>
+      </trans-unit>
+      <trans-unit id="4676708450167949848" datatype="html">
+        <source>Edit Recipe</source>
+        <target state="translated">编辑菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1553748107740727738" datatype="html">
+        <source>Delete Recipe</source>
+        <target state="translated">删除菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3355639116976009784" datatype="html">
+        <source>To Shopping List Done</source>
+        <target state="translated">完成添加操作</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">done with add ingredients to shopping list</note>
+      </trans-unit>
+      <trans-unit id="3768927257183755959" datatype="html">
+        <source>Save</source>
+        <target state="translated">保存</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+        <target state="translated">取消</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <target state="translated">用料名</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">name of Ingredient</note>
+      </trans-unit>
+      <trans-unit id="8675176265050343606" datatype="html">
+        <source>Image URL</source>
+        <target state="translated">照片 URL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4902817035128594900" datatype="html">
+        <source>Description</source>
+        <target state="translated">描述</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7615831122378516633" datatype="html">
+        <source>Add Ingredient</source>
+        <target state="translated">添加用料信息</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5559437798715181212" datatype="html">
+        <source>New Recipe</source>
+        <target state="translated">新菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-list/recipe-list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1490788782596613373" datatype="html">
+        <source>Please select a Recipe</source>
+        <target state="translated">请选择一个菜谱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/recipes/recipe-start/recipe-start.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7819314041543176992" datatype="html">
+        <source>Close</source>
+        <target state="translated">关闭</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/alert/alert.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6029052477859153243" datatype="html">
+        <source>This page does not found!</source>
+        <target state="translated">无法找到页面。</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6533918067030990396" datatype="html">
+        <source>Amount</source>
+        <target state="translated">数量</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7511608439712081581" datatype="html">
+        <source>{VAR_SELECT, select, true {Update} false {Add}}</source>
+        <target state="translated">{VAR_SELECT, select, true {更新} false {添加}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7022070615528435141" datatype="html">
+        <source>Delete</source>
+        <target state="translated">删除</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8700121026680200191" datatype="html">
+        <source>Clear</source>
+        <target state="translated">清除</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1403371138225877997" datatype="html">
+        <source>Do you want to discard the info in form?</source>
+        <target state="translated">你想放弃表单里的数据吗？</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
