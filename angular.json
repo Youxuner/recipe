@@ -48,7 +48,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
-            "localize" : ["zh"],
+            "localize" : ["it"],
             "aot": true,
             "i18nMissingTranslation": "warning"
           },
@@ -83,12 +83,10 @@
               "namedChunks": true
             },
             "zh" : {
-              "localize" : ["zh"],
-              "main": "src/main.zh.ts"
+              "localize" : ["zh"]
             },
             "it" : {
-              "localize" : ["it"],
-              "main": "src/main.it.ts"
+              "localize" : ["it"]
             }
           },
           "defaultConfiguration": "production"

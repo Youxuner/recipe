@@ -150,7 +150,7 @@ export class AuthEffects {
         error = $localize`The email address is already in use by another account.`;
         break;
       case 'OPERATION_NOT_ALLOWED':
-        error = $localize`Password sign-in is disabled for this project`;
+        error = $localize`Password sign-in is disabled for this project.`;
         break;
       case 'TOO_MANY_ATTEMPTS_TRY_LATER':
         error =

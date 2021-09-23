@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="it">
     <body>
       <trans-unit id="4374589633190318100" datatype="html">
         <source>Email: </source>
+        <target state="translated">Email:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">15</context>
@@ -11,6 +12,7 @@
       </trans-unit>
       <trans-unit id="8281836453106783702" datatype="html">
         <source>Password: </source>
+        <target state="translated">Password: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">27</context>
@@ -18,20 +20,15 @@
       </trans-unit>
       <trans-unit id="34299401780255660" datatype="html">
         <source>{VAR_SELECT, select, true {Login} false {Sign Up}}</source>
+        <target state="translated">{VAR_SELECT, select, true {Accedi} false {Registra}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8856905278208146821" datatype="html">
-        <source> <x id="ICU" equiv-text="{ isLoginMode, select, true {Login} false {Sign Up} }"/> </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
-          <context context-type="linenumber">44,45</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7669834072178630268" datatype="html">
         <source> Switch to <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up} false {Login} }"/> </source>
+        <target state="translated"> Passa a <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up} false {Login} }"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">51,52</context>
@@ -39,6 +36,7 @@
       </trans-unit>
       <trans-unit id="8603978838761643996" datatype="html">
         <source>{VAR_SELECT, select, true {Sign Up} false {Login}}</source>
+        <target state="translated">{VAR_SELECT, select, true {Registra} false {Accedi}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
           <context context-type="linenumber">51</context>
@@ -46,13 +44,15 @@
       </trans-unit>
       <trans-unit id="8855266570106931782" datatype="html">
         <source>The email address is already in use by another account.</source>
+        <target state="translated">L'indirizzo e-mail è già in uso da un altro account.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">150</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3766857524135728286" datatype="html">
-        <source>Password sign-in is disabled for this project</source>
+        <source>Password sign-in is disabled for this project.</source>
+        <target state="translated">L'accesso con password è disabilitato per questo progetto.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">153</context>
@@ -60,13 +60,15 @@
       </trans-unit>
       <trans-unit id="3769771873436042433" datatype="html">
         <source>We have blocked all requests from this device due to unusual activity. Try again later.</source>
+        <target state="translated">Abbiamo bloccato tutte le richieste da questo dispositivo a causa di attività insolite. Riprova più tardi.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">157</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4984759672966139917" datatype="html">
-        <source>Email o Password isn&apos;t correct.</source>
+        <source>Email o Password isn't correct.</source>
+        <target state="translated">Email o La password non è corretta.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">161</context>
@@ -74,6 +76,7 @@
       </trans-unit>
       <trans-unit id="6201841731208000483" datatype="html">
         <source>For this user please contact the administrator.</source>
+        <target state="translated">Per questo utente si prega di contattare l'amministratore.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">164</context>
@@ -81,6 +84,7 @@
       </trans-unit>
       <trans-unit id="2310759883928189804" datatype="html">
         <source>Recipe Book</source>
+        <target state="translated">Ricetta Libro</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">4</context>
@@ -90,6 +94,7 @@
       </trans-unit>
       <trans-unit id="598789626028399324" datatype="html">
         <source>Recipes</source>
+        <target state="translated">Ricette</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">24</context>
@@ -97,6 +102,7 @@
       </trans-unit>
       <trans-unit id="3716561241149069140" datatype="html">
         <source>Shopping List</source>
+        <target state="translated">Lista degli Acquisti</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">32</context>
@@ -104,6 +110,7 @@
       </trans-unit>
       <trans-unit id="6659583824626034043" datatype="html">
         <source> Authenticate </source>
+        <target state="translated">Autenticazione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">40,41</context>
@@ -111,6 +118,7 @@
       </trans-unit>
       <trans-unit id="7504940227782988572" datatype="html">
         <source> Logout </source>
+        <target state="translated">Esci</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">52,53</context>
@@ -118,6 +126,7 @@
       </trans-unit>
       <trans-unit id="3897348120591552265" datatype="html">
         <source>Manage</source>
+        <target state="translated">Gestione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">57</context>
@@ -125,6 +134,7 @@
       </trans-unit>
       <trans-unit id="1329517097221232723" datatype="html">
         <source>Save Data</source>
+        <target state="translated">Salva dati</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">60</context>
@@ -132,6 +142,7 @@
       </trans-unit>
       <trans-unit id="9180095768747711142" datatype="html">
         <source>Fetch Data</source>
+        <target state="translated">Recupera dati</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">61</context>
@@ -139,6 +150,7 @@
       </trans-unit>
       <trans-unit id="1981170756577848176" datatype="html">
         <source>Something else here</source>
+        <target state="translated">Qualcos'altro qui</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">63</context>
@@ -147,6 +159,7 @@
       </trans-unit>
       <trans-unit id="8578416858223032129" datatype="html">
         <source> Manage Recipe </source>
+        <target state="translated"> Gestione ricetta </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
           <context context-type="linenumber">18,19</context>
@@ -154,6 +167,7 @@
       </trans-unit>
       <trans-unit id="972176427659747051" datatype="html">
         <source>To Shopping List</source>
+        <target state="translated">Alla Lista della Spesa</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
           <context context-type="linenumber">21</context>
@@ -162,6 +176,7 @@
       </trans-unit>
       <trans-unit id="4676708450167949848" datatype="html">
         <source>Edit Recipe</source>
+        <target state="translated">Modifica Ricetta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
           <context context-type="linenumber">22</context>
@@ -169,6 +184,7 @@
       </trans-unit>
       <trans-unit id="1553748107740727738" datatype="html">
         <source>Delete Recipe</source>
+        <target state="translated">Elimina Ricetta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
           <context context-type="linenumber">23</context>
@@ -176,6 +192,7 @@
       </trans-unit>
       <trans-unit id="3355639116976009784" datatype="html">
         <source>To Shopping List Done</source>
+        <target state="translated">Alla Lista della Ricetta Fatto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-detail/recipe-detail.component.html</context>
           <context context-type="linenumber">28</context>
@@ -184,6 +201,7 @@
       </trans-unit>
       <trans-unit id="3768927257183755959" datatype="html">
         <source>Save</source>
+        <target state="translated">Salva</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">7</context>
@@ -191,6 +209,7 @@
       </trans-unit>
       <trans-unit id="2159130950882492111" datatype="html">
         <source>Cancel</source>
+        <target state="translated">Annulla</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">8</context>
@@ -198,6 +217,7 @@
       </trans-unit>
       <trans-unit id="8953033926734869941" datatype="html">
         <source>Name</source>
+        <target state="translated">Nome</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">15</context>
@@ -210,6 +230,7 @@
       </trans-unit>
       <trans-unit id="8675176265050343606" datatype="html">
         <source>Image URL</source>
+        <target state="translated">URL immagine</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">30</context>
@@ -217,6 +238,7 @@
       </trans-unit>
       <trans-unit id="4902817035128594900" datatype="html">
         <source>Description</source>
+        <target state="translated">Descrizione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">55</context>
@@ -224,6 +246,7 @@
       </trans-unit>
       <trans-unit id="7615831122378516633" datatype="html">
         <source>Add Ingredient</source>
+        <target state="translated">Aggiungere Ingredienti</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">83</context>
@@ -231,6 +254,7 @@
       </trans-unit>
       <trans-unit id="5559437798715181212" datatype="html">
         <source>New Recipe</source>
+        <target state="translated">Nuova Ricetta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-list/recipe-list.component.html</context>
           <context context-type="linenumber">3</context>
@@ -238,6 +262,7 @@
       </trans-unit>
       <trans-unit id="1490788782596613373" datatype="html">
         <source>Please select a Recipe</source>
+        <target state="translated">Seleziona una ricetta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-start/recipe-start.component.html</context>
           <context context-type="linenumber">1</context>
@@ -245,6 +270,7 @@
       </trans-unit>
       <trans-unit id="7819314041543176992" datatype="html">
         <source>Close</source>
+        <target state="translated">Chiudi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/alert/alert.component.html</context>
           <context context-type="linenumber">5</context>
@@ -252,6 +278,7 @@
       </trans-unit>
       <trans-unit id="6029052477859153243" datatype="html">
         <source>This page does not found!</source>
+        <target state="translated">Questa pagina non è stata trovata!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">1</context>
@@ -259,6 +286,7 @@
       </trans-unit>
       <trans-unit id="6533918067030990396" datatype="html">
         <source>Amount</source>
+        <target state="translated">Quantità</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
           <context context-type="linenumber">11</context>
@@ -266,6 +294,7 @@
       </trans-unit>
       <trans-unit id="7511608439712081581" datatype="html">
         <source>{VAR_SELECT, select, true {Update} false {Add}}</source>
+        <target state="translated">{VAR_SELECT, select, true {Aggiorna} false {Aggiunge}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
           <context context-type="linenumber">18</context>
@@ -273,6 +302,7 @@
       </trans-unit>
       <trans-unit id="7022070615528435141" datatype="html">
         <source>Delete</source>
+        <target state="translated">Elimina</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
           <context context-type="linenumber">19</context>
@@ -280,6 +310,7 @@
       </trans-unit>
       <trans-unit id="8700121026680200191" datatype="html">
         <source>Clear</source>
+        <target state="translated">Pulisce</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
           <context context-type="linenumber">20</context>
@@ -287,6 +318,7 @@
       </trans-unit>
       <trans-unit id="1403371138225877997" datatype="html">
         <source>Do you want to discard the info in form?</source>
+        <target state="translated">Vuoi scartare le informazioni nel modulo?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.ts</context>
           <context context-type="linenumber">103</context>
