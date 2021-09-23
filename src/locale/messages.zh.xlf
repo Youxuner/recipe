@@ -23,7 +23,7 @@
         <target state="translated">{VAR_SELECT, select, true {登录} false {注册}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8856905278208146821" datatype="html">
@@ -39,7 +39,7 @@
         <target state="translated"> 切换到 <x id="ICU" equiv-text="{ isLoginMode, select, true {Sign Up} false {Login} }"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
-          <context context-type="linenumber">51,52</context>
+          <context context-type="linenumber">53,54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8603978838761643996" datatype="html">
@@ -47,7 +47,7 @@
         <target state="translated">{VAR_SELECT, select, true {注册} false {登录}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/auth.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8855266570106931782" datatype="html">
@@ -58,8 +58,8 @@
           <context context-type="linenumber">150</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3766857524135728286" datatype="html">
-        <source>Password sign-in is disabled for this project</source>
+      <trans-unit id="7394195889340508583" datatype="html">
+        <source>Password sign-in is disabled for this project.</source>
         <target state="translated">此项目的密码登录是禁用的</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
@@ -88,6 +88,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/store/auth.effects.ts</context>
           <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2826581353496868063" datatype="html">
+        <source>Language</source>
+        <target state="translated">语言</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2310759883928189804" datatype="html">

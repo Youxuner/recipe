@@ -14,11 +14,11 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "en",
         "locales": {
           "zh" : {
-            "baseHref": "/cn/",
-            "translation": "src/locale/messages.cn.xlf"
+            "baseHref": "/zh/",
+            "translation": "src/locale/messages.zh.xlf"
           },
           "it" : {
             "baseHref": "/it/",
@@ -48,7 +48,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
-            "localize" : ["it"],
+            "localize" : true,
             "aot": true,
             "i18nMissingTranslation": "warning"
           },

@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, isDevMode, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import * as authAct from '../auth/store/auth.actions';
@@ -20,7 +21,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private uerSubId = new Subscription();
   constructor(
     // private service: RecipeService,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -45,5 +47,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public fetchData() {
     this.store.dispatch(new recAct.FetchRecipes());
+  }
+
+  public onClick(languageCode: string) {
+    let index = 0;
+    if (!isDevMode()) index=1;
+    let url = this.router.url;
+    if(url.match(languageCode)) return;
+
+    let urlParts = url.split("/");
+    urlParts[index] = languageCode;
+    url = "/" + urlParts.join("/");
+
+    this.router.navigateByUrl(url);
   }
 }

@@ -63,6 +63,15 @@
             <a ngbDropdownItem i18n="other operation">Something else here</a>
           </div>
         </li>
+        <li ngbDropdown class="nav-link" display="dynamic">
+          <div ngbDropdownToggle id="linguage" i18n>Language</div>
+
+          <div ngbDropdownMenu aria-labelledby="linguage">
+            <a ngbDropdownItem (click)="onClick('en')">English</a>
+            <a ngbDropdownItem (click)="onClick('it')">Italiano</a>
+            <a ngbDropdownItem (click)="onClick('zh')">简体中文</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
