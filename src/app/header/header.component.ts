@@ -51,8 +51,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.store.dispatch(new recAct.FetchRecipes());
   }
 
-  public onClick(aElem: HTMLAnchorElement, lan: string) {
-    let url = this.router.url;
-    aElem.href = "/" + lan + url;
-  }
+  // public onClick(aElem: HTMLAnchorElement, lan: string) {
+  //   let url = this.router.url;
+  //   aElem.href = "/" + lan + url;
+  // }
 }
