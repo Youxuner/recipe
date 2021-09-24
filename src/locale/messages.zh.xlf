@@ -95,7 +95,7 @@
         <target state="translated">语言</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2310759883928189804" datatype="html">
@@ -103,7 +103,7 @@
         <target state="translated">菜谱书</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">info of recipes</note>
         <note priority="1" from="meaning">name application</note>
@@ -113,7 +113,7 @@
         <target state="translated">菜谱</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3716561241149069140" datatype="html">
@@ -121,7 +121,7 @@
         <target state="translated">购物清单</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6659583824626034043" datatype="html">
@@ -129,7 +129,7 @@
         <target state="translated">登录/注册</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">47,48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7504940227782988572" datatype="html">
@@ -137,7 +137,7 @@
         <target state="translated"> 登出 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">52,53</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3897348120591552265" datatype="html">
@@ -145,7 +145,7 @@
         <target state="translated">管理</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1329517097221232723" datatype="html">
@@ -153,7 +153,7 @@
         <target state="translated">保存数据</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9180095768747711142" datatype="html">
@@ -161,7 +161,7 @@
         <target state="translated">获取数据</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1981170756577848176" datatype="html">
@@ -169,7 +169,7 @@
         <target state="translated">其他操作</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <note priority="1" from="description">other operation</note>
       </trans-unit>
@@ -233,16 +233,12 @@
       </trans-unit>
       <trans-unit id="8953033926734869941" datatype="html">
         <source>Name</source>
-        <target state="translated">用料名</target>
+        <target state="translated">菜谱名</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/recipes/recipe-edit/recipe-edit.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <note priority="1" from="description">name of Ingredient</note>
+        <note priority="1" from="description">name of recipe</note>
       </trans-unit>
       <trans-unit id="8675176265050343606" datatype="html">
         <source>Image URL</source>
@@ -299,6 +295,15 @@
           <context context-type="sourcefile">src/app/shared/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="ing_name" datatype="html">
+        <source>Name</source>
+        <target state="translated">用料名</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shopping-list/shopping-edit/shopping-edit.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">name of ingredient</note>
       </trans-unit>
       <trans-unit id="6533918067030990396" datatype="html">
         <source>Amount</source>

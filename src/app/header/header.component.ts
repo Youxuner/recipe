@@ -1,11 +1,11 @@
-import { Component, isDevMode, OnDestroy, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnDestroy, OnInit, ɵsetLocaleId } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { languageList } from 'src/locale/language';
 import * as authAct from '../auth/store/auth.actions';
 // import { RecipeService } from '../recipes/services/recipe.service';
 import * as recAct from '../recipes/store/recipe.actions';
-
 import { AppState } from '../store/app-state';
 
 @Component({
@@ -14,6 +14,8 @@ import { AppState } from '../store/app-state';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  public languageList = languageList;
+
   public collapsed: boolean = true;
   public active = 1;
   public isAuthenticated = false;
@@ -49,16 +51,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.store.dispatch(new recAct.FetchRecipes());
   }
 
-  public onClick(languageCode: string) {
-    let index = 0;
-    if (!isDevMode()) index=1;
+  public onClick(aElem: HTMLAnchorElement, lan: string) {
     let url = this.router.url;
-    if(url.match(languageCode)) return;
-
-    let urlParts = url.split("/");
-    urlParts[index] = languageCode;
-    url = "/" + urlParts.join("/");
-
-    this.router.navigateByUrl(url);
+    aElem.href = "/" + lan + url;
   }
 }

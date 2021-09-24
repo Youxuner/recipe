@@ -1,7 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-light border-bottom shadow-sm px-4">
   <div class="container-fluid">
     <!-- Part header -->
-    <a class="navbar-brand" routerLink="/recipes" i18n="name application|info of recipes">Recipe Book</a>
+    <a
+      class="navbar-brand"
+      routerLink="/recipes"
+      i18n="name application|info of recipes"
+      >Recipe Book</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -20,7 +25,8 @@
             aria-current="page"
             routerLink="recipes"
             routerLinkActive="border-bottom border-dark"
-            *ngIf="isAuthenticated" i18n
+            *ngIf="isAuthenticated"
+            i18n
             >Recipes</a
           >
         </li>
@@ -28,7 +34,8 @@
           <a
             class="nav-link text-dark"
             routerLink="shopping-list"
-            routerLinkActive="border-bottom border-dark" i18n
+            routerLinkActive="border-bottom border-dark"
+            i18n
             >Shopping List</a
           >
         </li>
@@ -47,13 +54,19 @@
           <button
             class="btn btn-outline-dark"
             (click)="logout()"
-            *ngIf="isAuthenticated" i18n
+            *ngIf="isAuthenticated"
+            i18n
           >
             Logout
           </button>
         </li>
         <!-- display="dynamic" risolve il problema della visualizzazione del dropdown list item -->
-        <li ngbDropdown class="nav-link" display="dynamic" *ngIf="isAuthenticated">
+        <li
+          ngbDropdown
+          class="nav-link"
+          display="dynamic"
+          *ngIf="isAuthenticated"
+        >
           <div ngbDropdownToggle id="navbarDropdown" i18n>Manage</div>
 
           <div ngbDropdownMenu aria-labelledby="navbarDropdown">
@@ -67,9 +80,19 @@
           <div ngbDropdownToggle id="linguage" i18n>Language</div>
 
           <div ngbDropdownMenu aria-labelledby="linguage">
-            <a ngbDropdownItem (click)="onClick('en')">English</a>
-            <a ngbDropdownItem (click)="onClick('it')">Italiano</a>
-            <a ngbDropdownItem (click)="onClick('zh')">简体中文</a>
+            <!-- <a ngbDropdownItem href="/en">English</a>
+            <a ngbDropdownItem href="/it">Italiano</a>
+            <a ngbDropdownItem href="/zh">简体中文</a> -->
+            <!-- <a ngbDropdownItem (click)="onClick(en, 'en')" #en>English</a>
+            <a ngbDropdownItem (click)="onClick(it, 'it')" #it>Italiano</a>
+            <a ngbDropdownItem (click)="onClick(zh, 'zh')" #zh>简体中文</a> -->
+            <a
+              ngbDropdownItem
+              *ngFor="let lan of languageList"
+              (click)="onClick(a, lan.code)"
+              #a
+              >{{ lan.label }}</a
+            >
           </div>
         </li>
       </ul>
