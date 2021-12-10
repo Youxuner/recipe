@@ -52,39 +52,30 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:before {
-  content: "";
+  content: "";    /* delete default image in checkbox */
   display: block;
-  position: absolute;
   width: 18px;
   height: 18px;
-  top: 0;
-  left: 0;
   background-color:#e9e9e9;
 }
 
 input[type=checkbox]:checked:before {
-  content: "";
   display: block;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 0;
-  left: 0;
   background-color:#0091ea;
 }
 
 input[type=checkbox]:checked:after {
   content: "";
   display: block;
-  width: 5px;
-  height: 10px;
+  width: 6px;
+  height: 12px;
   border: solid white;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   right: 1px;
 }
 
