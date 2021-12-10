@@ -1,0 +1,104 @@
+/*--------BUTTONS--------*/
+
+.btn-link {
+  color: #0091ea !important;
+}
+
+.back-button {
+  padding: 0rem 1.5rem;
+}
+
+/*--------INPUT--------*/
+
+:host ::ng-deep .dropdown-menu {
+  width: calc(100% - 15px);
+}
+
+:host ::ng-deep .dropdown-item.active,
+.dropdown-item:active {
+  background-color: #0091ea;
+}
+
+select {
+  letter-spacing: 1px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #dfdfdf;
+}
+
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0% auto;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+  background: #0091ea;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  background-color:#e9e9e9;
+}
+
+input[type=checkbox]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  background-color:#0091ea;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 0;
+  right: 1px;
+}
+
+/*--------MODALS--------*/
+
+:host ::ng-deep .nsm-dialog {
+  display: flex;
+  height: 100vh;
+}
+
+:host ::ng-deep .nsm-content {
+  margin: auto;
+}
+
+:host ::ng-deep .tight-modal .nsm-content {
+  max-width: 600px;
+}
